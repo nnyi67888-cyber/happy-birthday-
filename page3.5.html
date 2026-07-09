@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cake 🎂</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<style>
+#selectedCake{
+    width:220px;
+    display:block;
+    margin:20px auto;
+}
+
+button.btn{
+    border:none;
+    cursor:pointer;
+}
+
+.emoji{
+    font-size:60px;
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div class="card">
+
+<div id="emoji" class="emoji">🎂🕯️🕯️🕯️</div>
+
+<h1 id="title">Your Cake 🎂</h1>
+
+<h2>ဖြိုးဝေလွင် ❤️</h2>
+
+<p id="text">
+Make a wish before blowing out the candles! ✨
+</p>
+
+<img id="selectedCake" src="" alt="Cake">
+
+<br>
+
+<button class="btn" onclick="blowCandles()">
+💨 Blow Candles
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+// ရွေးထားတဲ့ Cake ပုံပြ
+document.getElementById("selectedCake").src =
+localStorage.getItem("cake");
+
+// Blow Candles
+function blowCandles(){
+
+    // 🎵 Music စဖွင့်
+    document.getElementById("bgMusic").play();
+
+    // 🕯️ Candle ငြိမ်း
+    document.getElementById("emoji").innerHTML="🎂";
+    document.getElementById("emoji").style.animation="none";
+
+    // 🎉 Text ပြောင်း
+    document.getElementById("title").innerHTML="🎉 Happy Birthday!";
+    document.getElementById("text").innerHTML=
+    "May all your wishes come true ❤️";
+
+    // 🎊 Confetti
+    confetti({
+        particleCount:200,
+        spread:120,
+        origin:{y:0.6}
+    });
+
+    // 3 စက္ကန့်နေရင် Page4 သွား
+    setTimeout(function(){
+        window.location.href="page4.html";
+    },3000);
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

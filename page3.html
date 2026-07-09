@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Cake 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="emoji">🎂</div>
+
+            <h1>Choose Your Cake</h1>
+
+            <p>Pick your favorite birthday cake ❤️</p>
+
+            <div class="cake-list">
+
+                <div class="cake" onclick="chooseCake('images/chocolate-cake.png')">
+                    <img src="images/chocolate-cake.png">
+                    <br>Chocolate
+                </div>
+
+                <div class="cake" onclick="chooseCake('images/strawberry-cake.png')">
+                    <img src="images/strawberry-cake.png">
+                    <br>Strawberry
+                </div>
+
+                <div class="cake" onclick="chooseCake('images/blueberry-cake.png')">
+                    <img src="images/blueberry-cake.png">
+                    <br>Blueberry
+                </div>
+
+                <div class="cake" onclick="chooseCake('images/premium-cake.png')">
+                    <img src="images/premium-cake.png">
+                    <br>Classic
+                </div>
+
+            </div>
+
+            <br>
+
+            <a href="page3.5.html" class="btn">
+                Continue ➜
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        function chooseCake(img) {
+            localStorage.setItem("cake", img);
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

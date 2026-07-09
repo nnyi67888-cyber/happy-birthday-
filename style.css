@@ -1,0 +1,468 @@
+#selectedCake{
+    width:220px;
+    margin:20px 0;
+    transition:.5s;
+}
+
+#selectedCake:hover{
+    transform:scale(1.08);
+}
+
+button.btn{
+    border:none;
+    cursor:pointer;
+}.emoji{
+    font-size:60px;
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4b91,#c2185b,#6a1b9a);
+    font-family:Arial,Helvetica,sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4b91,#c2185b,#6a1b9a);
+    font-family:Arial,Helvetica,sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
+    padding:40px 30px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.emoji{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.card h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.card h2{
+    font-size:26px;
+    margin-bottom:20px;
+    color:#ffd8e8;
+}
+
+.card p{
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ffffff;
+    color:#e91e63;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}/* ===== Background Stars ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+    background-size:35px 35px;
+    opacity:.25;
+    animation:starsMove 20s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-300px);
+    }
+}/* ===== Floating Hearts ===== */
+
+body::after{
+    content:"❤️  💖  💕  ❤️  💖";
+    position:fixed;
+    left:0;
+    bottom:-80px;
+    width:100%;
+    font-size:24px;
+    letter-spacing:60px;
+    opacity:.35;
+    animation:heartsUp 12s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes heartsUp{
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(-120vh);
+    }
+}/* ===== Card Animation ===== */
+
+.card{
+    animation:cardShow 1.2s ease;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(255,255,255,.25);
+}
+
+@keyframes cardShow{
+
+    0%{
+        opacity:0;
+        transform:translateY(50px) scale(.9);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}/* ===== Button Animation ===== */
+
+.btn{
+    animation:pulse 2s infinite;
+}
+
+.btn:hover{
+    background:#ff5fa2;
+    color:#fff;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(255,255,255,.6);
+    }
+
+    70%{
+        box-shadow:0 0 0 20px rgba(255,255,255,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(255,255,255,0);
+    }
+
+}/* ===== Cake Cards ===== */
+
+.cake-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:30px 0;
+}
+
+.cake{
+    background:rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:20px;
+    color:#fff;
+    text-align:center;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cake:hover{
+    transform:scale(1.05);
+    background:rgba(255,255,255,.25);
+}/* ===== Candle ===== */
+
+.candle{
+
+width:14px;
+
+height:70px;
+
+margin:25px auto;
+
+border-radius:20px;
+
+background:#fff;
+
+position:relative;
+
+}
+
+.candle::before{
+
+content:"";
+
+position:absolute;
+
+top:-18px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:16px;
+
+height:16px;
+
+border-radius:50%;
+
+background:gold;
+
+box-shadow:0 0 25px yellow;
+
+animation:flame 1s infinite alternate;
+
+}
+
+@keyframes flame{
+
+from{
+
+transform:translateX(-50%) scale(1);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateX(-50%) scale(1.3);
+
+opacity:.6;
+
+}
+
+}/* ===== Gallery ===== */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin:25px 0;
+}
+
+.gallery img{
+width:100%;
+height:110px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid rgba(255,255,255,.4);
+}
+
+.letter{
+margin:25px 0;
+padding:20px;
+background:rgba(255,255,255,.12);
+border-radius:20px;
+}
+
+.letter h2{
+margin-bottom:15px;
+}
+
+.letter p{
+font-size:16px;
+line-height:1.8;
+}/* ===== Premium Loader ===== */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#120018;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:1s;
+}
+
+.loader-heart{
+font-size:70px;
+animation:heartbeat 1s infinite;
+}
+
+#loader h2{
+color:#fff;
+margin-top:20px;
+font-size:22px;
+letter-spacing:1px;
+}
+
+@keyframes heartbeat{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.3);
+}
+
+100%{
+transform:scale(1);
+}
+
+}#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff4d94,#8e44ad);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    color:#fff;
+}
+
+.loader-heart{
+    font-size:70px;
+    animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+.card{
+    background:#fff;
+    padding:30px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.emoji{
+    font-size:60px;
+}
+
+h1{
+    color:#ff4d94;
+    margin:15px 0;
+}
+
+h2{
+    color:#555;
+    margin-bottom:15px;
+}
+
+p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#ff4d94;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff4d94,#8e44ad);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    z-index:9999;
+}
+
+.loader-heart{
+    font-size:60px;
+    animation:heartbeat 1s infinite;
+}
+
+#loader h2{
+    margin-top:20px;
+    font-size:22px;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+}.cake img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:10px;
+}
